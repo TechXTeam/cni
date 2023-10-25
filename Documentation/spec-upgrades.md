@@ -18,7 +18,7 @@ For example, your Go imports might look like
 
 ```go
 import (
-    cniv1 "github.com/containernetworking/cni/pkg/types/100"
+    cniv1 "github.com/TechXTeam/cni/pkg/types/100"
 )
 ```
 
@@ -39,7 +39,7 @@ The 0.3.0 specification contained a small error. The Result structure's `ip` fie
 
 The 0.3.1 specification corrects the `Result` structure to use the `ips` field name as originally intended.  This is the only change between 0.3.0 and 0.3.1.
 
-Version 0.3.0 of the [CNI Specification](https://github.com/containernetworking/cni/blob/spec-v0.3.0/SPEC.md) provides rich information
+Version 0.3.0 of the [CNI Specification](https://github.com/TechXTeam/cni/blob/spec-v0.3.0/SPEC.md) provides rich information
 about container network configuration, including details of network interfaces
 and support for multiple IP addresses.
 
@@ -64,12 +64,12 @@ ensure that the configuration files specify a `cniVersion` field and that the
 version there is supported by your container runtime and CNI plugins.
 Configuration files without a version field should be given version 0.2.0. 
 The CNI spec includes example configuration files for 
-[single plugins](https://github.com/containernetworking/cni/blob/master/SPEC.md#example-configurations)
-and for [lists of chained plugins](https://github.com/containernetworking/cni/blob/master/SPEC.md#example-configurations).
+[single plugins](https://github.com/TechXTeam/cni/blob/master/SPEC.md#example-configurations)
+and for [lists of chained plugins](https://github.com/TechXTeam/cni/blob/master/SPEC.md#example-configurations).
 
 Consult the documentation for your runtime and plugins to determine what
 CNI spec versions they support. Test any plugin upgrades before deploying to 
-production. You may find [cnitool](https://github.com/containernetworking/cni/tree/master/cnitool)
+production. You may find [cnitool](https://github.com/TechXTeam/cni/tree/master/cnitool)
 useful. Specifically, your configuration version should be the lowest common
 version supported by your plugins.
 
@@ -94,7 +94,7 @@ command with the following JSON data:
 ```
 
 Second, for the `ADD` command, a plugin must respect the `cniVersion` field
-provided in the [network configuration JSON](https://github.com/containernetworking/cni/blob/master/SPEC.md#network-configuration). 
+provided in the [network configuration JSON](https://github.com/TechXTeam/cni/blob/master/SPEC.md#network-configuration). 
 That field is a request for the plugin to return results of a particular format:
 
 - If the `cniVersion` field is not present, then spec v0.2.0 should be assumed
@@ -102,11 +102,11 @@ That field is a request for the plugin to return results of a particular format:
 
 - If the plugin doesn't support the version, the plugin must error.
 
-- Otherwise, the plugin must return a [CNI Result](https://github.com/containernetworking/cni/blob/master/SPEC.md#result)
+- Otherwise, the plugin must return a [CNI Result](https://github.com/TechXTeam/cni/blob/master/SPEC.md#result)
 	in the format requested.
 
 Result formats for older CNI spec versions are available in the
-[git history for SPEC.md](https://github.com/containernetworking/cni/commits/master/SPEC.md).
+[git history for SPEC.md](https://github.com/TechXTeam/cni/commits/master/SPEC.md).
 
 For example, suppose a plugin, via its `VERSION` response, advertises CNI specification
 support for v0.2.0 and v0.3.0.  When it receives `cniVersion` key of `0.2.0`,
@@ -115,7 +115,7 @@ the plugin must return result JSON conforming to CNI spec version 0.2.0.
 ### Specific guidance for plugins written in Go
 Plugins written in Go may leverage the Go language packages in this repository
 to ease the process of upgrading and supporting multiple versions.  CNI 
-[Library and Plugins Release v0.5.0](https://github.com/containernetworking/cni/releases/tag/v0.5.0)
+[Library and Plugins Release v0.5.0](https://github.com/TechXTeam/cni/releases/tag/v0.5.0)
 includes important changes to the Golang APIs.  Plugins using these APIs will
 require some changes now, but should more-easily handle spec changes and
 new features going forward.
@@ -138,10 +138,10 @@ Here is some example code
 
 ```go
 import (
-	 "github.com/containernetworking/cni/pkg/skel"
-	 "github.com/containernetworking/cni/pkg/types"
-	 current "github.com/containernetworking/cni/pkg/types/100"
-	 "github.com/containernetworking/cni/pkg/version"
+	 "github.com/TechXTeam/cni/pkg/skel"
+	 "github.com/TechXTeam/cni/pkg/types"
+	 current "github.com/TechXTeam/cni/pkg/types/100"
+	 "github.com/TechXTeam/cni/pkg/version"
 )
 
 func cmdAdd(args *skel.CmdArgs) error {
@@ -203,15 +203,15 @@ call both new and legacy plugins, and handle the results from either.
 
 When calling a plugin, the runtime must request that the plugin respond in a
 particular format by specifying the `cniVersion` field in the
-[Network Configuration](https://github.com/containernetworking/cni/blob/master/SPEC.md#network-configuration)
+[Network Configuration](https://github.com/TechXTeam/cni/blob/master/SPEC.md#network-configuration)
 JSON block.  The plugin will then respond with
-a [Result](https://github.com/containernetworking/cni/blob/master/SPEC.md#result)
+a [Result](https://github.com/TechXTeam/cni/blob/master/SPEC.md#result)
 in the format defined by that CNI spec version, and the runtime must parse
 and handle this result.
 
 #### Handle errors due to version incompatibility
 Plugins may respond with error indicating that they don't support the requested
-CNI version (see [Well-known Error Codes](https://github.com/containernetworking/cni/blob/master/SPEC.md#well-known-error-codes)),
+CNI version (see [Well-known Error Codes](https://github.com/TechXTeam/cni/blob/master/SPEC.md#well-known-error-codes)),
 e.g.
 ```json
 {
@@ -245,7 +245,7 @@ an error message that helps diagnose the issue.
 ### Specific guidance for container runtimes written in Go
 Container runtimes written in Go may leverage the Go language packages in this
 repository to ease the process of upgrading and supporting multiple versions.
-CNI [Library and Plugins Release v0.5.0](https://github.com/containernetworking/cni/releases)
+CNI [Library and Plugins Release v0.5.0](https://github.com/TechXTeam/cni/releases)
 includes important changes to the Golang APIs.  Runtimes using these APIs will
 require some changes now, but should more-easily handle spec changes and
 new features going forward.

@@ -20,9 +20,9 @@ import (
 	"net"
 	"os"
 
-	"github.com/containernetworking/cni/pkg/types"
-	types020 "github.com/containernetworking/cni/pkg/types/020"
-	types040 "github.com/containernetworking/cni/pkg/types/040"
+	"github.com/TechXTeam/cni/pkg/types"
+	types020 "github.com/TechXTeam/cni/pkg/types/020"
+	types040 "github.com/TechXTeam/cni/pkg/types/040"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

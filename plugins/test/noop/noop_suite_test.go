@@ -27,7 +27,7 @@ func TestNoop(t *testing.T) {
 	RunSpecs(t, "No-op plugin Suite")
 }
 
-const packagePath = "github.com/containernetworking/cni/plugins/test/noop"
+const packagePath = "github.com/TechXTeam/cni/plugins/test/noop"
 
 var pathToPlugin string
 

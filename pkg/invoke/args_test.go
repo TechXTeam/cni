@@ -17,7 +17,7 @@ package invoke_test
 import (
 	"os"
 
-	"github.com/containernetworking/cni/pkg/invoke"
+	"github.com/TechXTeam/cni/pkg/invoke"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

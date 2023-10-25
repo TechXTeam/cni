@@ -29,11 +29,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/containernetworking/cni/pkg/skel"
-	"github.com/containernetworking/cni/pkg/types"
-	current "github.com/containernetworking/cni/pkg/types/100"
-	"github.com/containernetworking/cni/pkg/version"
-	noop_debug "github.com/containernetworking/cni/plugins/test/noop/debug"
+	"github.com/TechXTeam/cni/pkg/skel"
+	"github.com/TechXTeam/cni/pkg/types"
+	current "github.com/TechXTeam/cni/pkg/types/100"
+	"github.com/TechXTeam/cni/pkg/version"
+	noop_debug "github.com/TechXTeam/cni/plugins/test/noop/debug"
 )
 
 type NetConf struct {

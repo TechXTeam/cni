@@ -29,7 +29,7 @@ import (
 	"strings"
 )
 
-const packageBaseName = "github.com/containernetworking/cni"
+const packageBaseName = "github.com/TechXTeam/cni"
 
 func run(cmd *exec.Cmd) error {
 	out, err := cmd.CombinedOutput()
@@ -65,7 +65,7 @@ func modInit(path, name string) error {
 }
 
 func addLibcni(path, gitRef string) error {
-	cmd := exec.Command("go", "get", "github.com/containernetworking/cni@"+gitRef)
+	cmd := exec.Command("go", "get", "github.com/TechXTeam/cni@"+gitRef)
 	cmd.Dir = path
 	return run(cmd)
 }

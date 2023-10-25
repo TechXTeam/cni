@@ -27,7 +27,7 @@ func TestInvoke(t *testing.T) {
 	RunSpecs(t, "Invoke Suite")
 }
 
-const packagePath = "github.com/containernetworking/cni/plugins/test/noop"
+const packagePath = "github.com/TechXTeam/cni/plugins/test/noop"
 
 var pathToPlugin string
 

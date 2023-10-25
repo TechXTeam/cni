@@ -23,7 +23,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/containernetworking/cni/libcni"
+	"github.com/TechXTeam/cni/libcni"
 )
 
 // Protocol parameters are passed to the plugins via OS environment variables.

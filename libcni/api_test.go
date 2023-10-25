@@ -28,11 +28,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/containernetworking/cni/libcni"
-	"github.com/containernetworking/cni/pkg/skel"
-	"github.com/containernetworking/cni/pkg/types"
-	current "github.com/containernetworking/cni/pkg/types/100"
-	noop_debug "github.com/containernetworking/cni/plugins/test/noop/debug"
+	"github.com/TechXTeam/cni/libcni"
+	"github.com/TechXTeam/cni/pkg/skel"
+	"github.com/TechXTeam/cni/pkg/types"
+	current "github.com/TechXTeam/cni/pkg/types/100"
+	noop_debug "github.com/TechXTeam/cni/plugins/test/noop/debug"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

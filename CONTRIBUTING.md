@@ -58,7 +58,7 @@ vagrant up
 vagrant ssh
 # you're now in a shell in a virtual machine
 sudo su
-cd /go/src/github.com/containernetworking/cni
+cd /go/src/github.com/TechXTeam/cni
 
 # to run the full test suite
 ./test.sh

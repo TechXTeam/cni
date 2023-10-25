@@ -23,9 +23,9 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/containernetworking/cni/pkg/types"
-	"github.com/containernetworking/cni/pkg/types/020"
-	"github.com/containernetworking/cni/pkg/version/testhelpers"
+	"github.com/TechXTeam/cni/pkg/types"
+	types020 "github.com/TechXTeam/cni/pkg/types/020"
+	"github.com/TechXTeam/cni/pkg/version/testhelpers"
 )
 
 // An Example is a Git reference to the CNI repo and a Golang CNI plugin that
@@ -81,8 +81,8 @@ var V010 = Example{
 import (
 	"net"
 
-	"github.com/containernetworking/cni/pkg/skel"
-	"github.com/containernetworking/cni/pkg/types"
+	"github.com/TechXTeam/cni/pkg/skel"
+	"github.com/TechXTeam/cni/pkg/types"
 )
 
 var result = types.Result{

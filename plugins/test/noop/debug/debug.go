@@ -19,7 +19,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 
-	"github.com/containernetworking/cni/pkg/skel"
+	"github.com/TechXTeam/cni/pkg/skel"
 )
 
 const EmptyReportResultMessage = "set debug.ReportResult and call debug.WriteDebug() before calling this plugin"

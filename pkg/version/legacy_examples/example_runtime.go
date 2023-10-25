@@ -19,7 +19,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	noop_debug "github.com/containernetworking/cni/plugins/test/noop/debug"
+	noop_debug "github.com/TechXTeam/cni/plugins/test/noop/debug"
 )
 
 // An ExampleRuntime is a small program that uses libcni to invoke a network plugin.
@@ -152,7 +152,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/containernetworking/cni/libcni"
+	"github.com/TechXTeam/cni/libcni"
 )
 
 func main(){

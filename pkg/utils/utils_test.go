@@ -18,8 +18,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/containernetworking/cni/pkg/types"
-	"github.com/containernetworking/cni/pkg/utils"
+	"github.com/TechXTeam/cni/pkg/types"
+	"github.com/TechXTeam/cni/pkg/utils"
 )
 
 func TestValidateContainerID(t *testing.T) {

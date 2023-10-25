@@ -22,9 +22,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/containernetworking/cni/pkg/invoke"
-	current "github.com/containernetworking/cni/pkg/types/100"
-	"github.com/containernetworking/cni/plugins/test/noop/debug"
+	"github.com/TechXTeam/cni/pkg/invoke"
+	current "github.com/TechXTeam/cni/pkg/types/100"
+	"github.com/TechXTeam/cni/plugins/test/noop/debug"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

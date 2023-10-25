@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/containernetworking/cni/pkg/types"
-	"github.com/containernetworking/cni/pkg/types/020"
-	"github.com/containernetworking/cni/pkg/types/create"
+	"github.com/TechXTeam/cni/pkg/types"
+	types020 "github.com/TechXTeam/cni/pkg/types/020"
+	"github.com/TechXTeam/cni/pkg/types/create"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

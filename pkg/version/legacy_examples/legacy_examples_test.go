@@ -19,7 +19,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/containernetworking/cni/pkg/version/legacy_examples"
+	"github.com/TechXTeam/cni/pkg/version/legacy_examples"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

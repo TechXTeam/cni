@@ -21,9 +21,9 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/containernetworking/cni/pkg/invoke"
-	"github.com/containernetworking/cni/pkg/version"
-	"github.com/containernetworking/cni/pkg/version/testhelpers"
+	"github.com/TechXTeam/cni/pkg/invoke"
+	"github.com/TechXTeam/cni/pkg/version"
+	"github.com/TechXTeam/cni/pkg/version/testhelpers"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -90,8 +90,8 @@ var _ = Describe("GetVersion, integration tests", func() {
 const plugin_source_v040_check = `package main
 
 import (
-	"github.com/containernetworking/cni/pkg/skel"
-	"github.com/containernetworking/cni/pkg/version"
+	"github.com/TechXTeam/cni/pkg/skel"
+	"github.com/TechXTeam/cni/pkg/version"
 	"fmt"
 )
 
@@ -106,8 +106,8 @@ const git_ref_v031 = "909fe7d"
 const plugin_source_v020_custom_versions = `package main
 
 import (
-	"github.com/containernetworking/cni/pkg/skel"
-	"github.com/containernetworking/cni/pkg/version"
+	"github.com/TechXTeam/cni/pkg/skel"
+	"github.com/TechXTeam/cni/pkg/version"
 	"fmt"
 )
 
@@ -120,7 +120,7 @@ const git_ref_v020_custom_versions = "bf31ed15"
 // a minimal 0.1.0 / 0.2.0 plugin that cannot report it's own version support
 const plugin_source_no_custom_versions = `package main
 
-import "github.com/containernetworking/cni/pkg/skel"
+import "github.com/TechXTeam/cni/pkg/skel"
 import "fmt"
 
 func c(_ *skel.CmdArgs) error { fmt.Println("{}"); return nil }

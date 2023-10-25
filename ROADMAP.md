@@ -1,11 +1,11 @@
 # CNI Roadmap
 
 This document defines a high level roadmap for CNI development.
-The list below is not complete, and we advise to get the current project state from the [milestones defined in GitHub](https://github.com/containernetworking/cni/milestones).
+The list below is not complete, and we advise to get the current project state from the [milestones defined in GitHub](https://github.com/TechXTeam/cni/milestones).
 
 ## CNI Milestones
 
-### [v1.0.0](https://github.com/containernetworking/cni/milestones/v1.0.0)
+### [v1.0.0](https://github.com/TechXTeam/cni/milestones/v1.0.0)
 
 - Targeted for April 2020
 - More precise specification language

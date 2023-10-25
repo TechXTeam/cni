@@ -20,9 +20,9 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/containernetworking/cni/pkg/invoke"
+	"github.com/TechXTeam/cni/pkg/invoke"
 
-	noop_debug "github.com/containernetworking/cni/plugins/test/noop/debug"
+	noop_debug "github.com/TechXTeam/cni/plugins/test/noop/debug"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

@@ -14,7 +14,7 @@
 
 package fakes
 
-import "github.com/containernetworking/cni/pkg/version"
+import "github.com/TechXTeam/cni/pkg/version"
 
 type VersionDecoder struct {
 	DecodeCall struct {

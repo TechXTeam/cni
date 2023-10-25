@@ -20,9 +20,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/containernetworking/cni/pkg/types"
-	current "github.com/containernetworking/cni/pkg/types/100"
-	"github.com/containernetworking/cni/pkg/version"
+	"github.com/TechXTeam/cni/pkg/types"
+	current "github.com/TechXTeam/cni/pkg/types/100"
+	"github.com/TechXTeam/cni/pkg/version"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
@@ -261,7 +261,7 @@ var _ = Describe("dispatching to the correct callback", func() {
 
 				It("immediately returns a useful error", func() {
 					err := dispatch.pluginMain(cmdAdd.Func, cmdCheck.Func, cmdDel.Func, versionInfo, "")
-					Expect(err.Code).To(Equal(types.ErrIncompatibleCNIVersion)) // see https://github.com/containernetworking/cni/blob/master/SPEC.md#well-known-error-codes
+					Expect(err.Code).To(Equal(types.ErrIncompatibleCNIVersion)) // see https://github.com/TechXTeam/cni/blob/master/SPEC.md#well-known-error-codes
 					Expect(err.Msg).To(Equal("incompatible CNI versions"))
 					Expect(err.Details).To(Equal(`config is "0.1.0", plugin supports ["4.3.2"]`))
 				})
@@ -330,7 +330,7 @@ var _ = Describe("dispatching to the correct callback", func() {
 			It("immediately returns a useful error", func() {
 				dispatch.Stdin = strings.NewReader(`{ "name": "skel-test", "cniVersion": "0.3.0", "some": "config" }`)
 				err := dispatch.pluginMain(cmdAdd.Func, cmdCheck.Func, cmdDel.Func, versionInfo, "")
-				Expect(err.Code).To(Equal(types.ErrIncompatibleCNIVersion)) // see https://github.com/containernetworking/cni/blob/master/SPEC.md#well-known-error-codes
+				Expect(err.Code).To(Equal(types.ErrIncompatibleCNIVersion)) // see https://github.com/TechXTeam/cni/blob/master/SPEC.md#well-known-error-codes
 				Expect(err.Msg).To(Equal("config version does not allow CHECK"))
 				Expect(cmdAdd.CallCount).To(Equal(0))
 				Expect(cmdCheck.CallCount).To(Equal(0))
@@ -343,7 +343,7 @@ var _ = Describe("dispatching to the correct callback", func() {
 				dispatch.Stdin = strings.NewReader(`{ "name": "skel-test", "cniVersion": "0.4.0", "some": "config" }`)
 				versionInfo = version.PluginSupports("0.1.0", "0.2.0", "0.3.0")
 				err := dispatch.pluginMain(cmdAdd.Func, cmdCheck.Func, cmdDel.Func, versionInfo, "")
-				Expect(err.Code).To(Equal(types.ErrIncompatibleCNIVersion)) // see https://github.com/containernetworking/cni/blob/master/SPEC.md#well-known-error-codes
+				Expect(err.Code).To(Equal(types.ErrIncompatibleCNIVersion)) // see https://github.com/TechXTeam/cni/blob/master/SPEC.md#well-known-error-codes
 				Expect(err.Msg).To(Equal("plugin version does not allow CHECK"))
 				Expect(cmdAdd.CallCount).To(Equal(0))
 				Expect(cmdCheck.CallCount).To(Equal(0))

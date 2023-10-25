@@ -74,7 +74,7 @@ The CNI team also maintains some [core plugins in a separate repository](https:/
 
 ## Contributing to CNI
 
-We welcome contributions, including [bug reports](https://github.com/containernetworking/cni/issues), and code and documentation improvements.
+We welcome contributions, including [bug reports](https://github.com/TechXTeam/cni/issues), and code and documentation improvements.
 If you intend to contribute to code or documentation, please read [CONTRIBUTING.md](CONTRIBUTING.md). Also see the [contact section](#contact) in this README.
 
 ## How do I use CNI?
@@ -137,7 +137,7 @@ Finally, execute a command (`ifconfig` in this example) in a private network nam
 
 ```bash
 $ CNI_PATH=$GOPATH/src/github.com/containernetworking/plugins/bin
-$ cd $GOPATH/src/github.com/containernetworking/cni/scripts
+$ cd $GOPATH/src/github.com/TechXTeam/cni/scripts
 $ sudo CNI_PATH=$CNI_PATH ./priv-net-run.sh ifconfig
 eth0      Link encap:Ethernet  HWaddr f2:c2:6f:54:b8:2b  
           inet addr:10.22.0.2  Bcast:0.0.0.0  Mask:255.255.0.0
@@ -167,7 +167,7 @@ Next, docker-run.sh script wraps `docker run`, to execute the plugins prior to e
 
 ```bash
 $ CNI_PATH=$GOPATH/src/github.com/containernetworking/plugins/bin
-$ cd $GOPATH/src/github.com/containernetworking/cni/scripts
+$ cd $GOPATH/src/github.com/TechXTeam/cni/scripts
 $ sudo CNI_PATH=$CNI_PATH ./docker-run.sh --rm busybox:latest ifconfig
 eth0      Link encap:Ethernet  HWaddr fa:60:70:aa:07:d1  
           inet addr:10.22.0.2  Bcast:0.0.0.0  Mask:255.255.0.0
